@@ -28,14 +28,11 @@ public class Kontener
 
     public virtual void LadowanieKontenera(int masaLadunku)
     {
-        if (masaLadunku > maksymalnaLadownosc)
+        if (this.masaLadunku + masaLadunku > maksymalnaLadownosc)
         {
             throw new OverfillException();
         }
-        else
-        {
-            this.masaLadunku += masaLadunku;
-        }
+        this.masaLadunku += masaLadunku;
     }
 
     public double PobierzMase() => masaLadunku;
